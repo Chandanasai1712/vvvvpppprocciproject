@@ -26,7 +26,7 @@ pipeline{
     stages {
         stage('Build') {
             steps {
-               sh 'mvn clean install -U -DskipTests -Dmaven.repo.local=~/.m2/repository'
+               sh 'maven clean install -U -DskipTests -Dmaven.repo.local=~/.m2/repository'
                }
                post {
                 success {
@@ -35,7 +35,7 @@ pipeline{
                 }
             }
            }
-           stage("UNIT TEST'){
+           stage('UNIT TEST'){
             steps {
                 sh 'mvn clean install -U -DskipTests -Dmaven.repo.local=~/.m2/repository test'
             }
