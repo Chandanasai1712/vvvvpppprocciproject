@@ -89,6 +89,7 @@ pipeline{
                 )
             }
         }
+    }
         post{
 	always {
 		echo 'slack Notification'
@@ -98,5 +99,5 @@ pipeline{
 }
 }	
         
-    }
+    
 }
