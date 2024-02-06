@@ -26,7 +26,7 @@ pipeline{
     stages {
         stage('Build') {
             steps {
-               sh 'maven clean install -U -DskipTests -Dmaven.repo.local=~/.m2/repository'
+               sh 'mvn clean install -U -DskipTests -Dmaven.repo.local=~/.m2/repository'
                }
                post {
                 success {
@@ -95,7 +95,7 @@ pipeline{
 		echo 'slack Notifications.'
 		slackSend channel: '#devops',
 			color:COLOR_MAP[currentBuild.currentResult],
-			message: "*${currentBuild.currentResult}:*Job ${env.JOB_NAME} buil ${env.BUILD_NUMBER} \n More info at : ${env.BUILD_URL}"
+			message: "*${currentBuild.currentResult}:*Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at : ${env.BUILD_URL}"
 }
 }	
         
