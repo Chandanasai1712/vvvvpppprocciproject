@@ -1,5 +1,5 @@
 ---
-- hosts: appsrvgrp1
+- hosts: appsrvgrp
   become: yes
   gather_facts: False
   tasks:
