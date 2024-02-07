@@ -98,7 +98,7 @@ pipeline{
                     playbook   : 'ansible/site.yml',
                     installation : 'ansible',
                     colorized   : true,
-                    credentialsId : 'app01stg.vprofile.project',
+                    credentialsId : 'applogin-stage',
                     disableHostKeyChecking : false,
                     extraVars   :[
                         USER: "admin",
