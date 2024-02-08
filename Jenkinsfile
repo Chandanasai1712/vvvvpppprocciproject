@@ -99,7 +99,7 @@ pipeline{
                     installation : 'ansible',
                     colorized   : true,
                     credentialsId : 'applogin-stage',
-                    disableHostKeyChecking : false,
+                    disableHostKeyChecking : true,
                     extraVars   :[
                         USER: "admin",
                         PASS: "${NEXUSPASS}",
