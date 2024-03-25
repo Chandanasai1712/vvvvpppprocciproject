@@ -2,6 +2,9 @@ def COLOR_MAP = [
 	'SUCCESS' : 'good',
 	'FAILURE' : 'danger',
 	]
+def registry = :"http://54.147.49.138:8081/"
+def imageName = '54.147.49.138:8081/docker-release/vpro'
+def version   = 'v2'
 pipeline{
     agent any
     tools {
@@ -89,6 +92,26 @@ pipeline{
                 )
             }
         }
+	    stage(" Docker Build ") {
+      steps {
+        script {
+           echo '<--------------- Docker Build Started --------------->'
+           app = docker.build(imageName+":"+version)
+           echo '<--------------- Docker Build Ends --------------->'
+        }
+      }
+    }
+     stage (" Docker Publish "){
+        steps {
+            script {
+               echo '<--------------- Docker Publish Started --------------->'  
+                docker.withRegistry(registry, "${NEXUS_LOGIN}"){
+                    app.push()
+                }    
+               echo '<--------------- Docker Publish Ended --------------->'  
+            }
+        }
+    }
     }
         post{
 	always {
