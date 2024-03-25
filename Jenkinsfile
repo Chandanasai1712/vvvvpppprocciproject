@@ -2,6 +2,7 @@ def COLOR_MAP = [
 	'SUCCESS' : 'good',
 	'FAILURE' : 'danger',
 	]
+def registry = "http://172.31.91.221:8081/"
 def imageName = '172.31.91.221:8081/docker-release/vpro'
 def version   = 'v2'
 pipeline{
