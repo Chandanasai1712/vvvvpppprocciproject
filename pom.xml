@@ -168,7 +168,7 @@
     </repository>
     <repository>
       <id>${NEXUS_DOCKER_REPO}</id>
-      <url>http://${NEXUSIP}:${NEXUSPORT}/repository/${NEXUS_GRP_REPO}/</url>
+      <url>http://${NEXUSIP}:${NEXUSPORT}/repository1/${NEXUS_GRP_REPO}/</url>
     </repository>
   </repositories>
 </project>
