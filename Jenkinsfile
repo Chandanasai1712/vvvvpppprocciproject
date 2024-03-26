@@ -2,7 +2,8 @@ def COLOR_MAP = [
 	'SUCCESS' : 'good',
 	'FAILURE' : 'danger',
 	]
-
+def registry = "http://172.31.91.221:8081/"
+def imageName = '172.31.91.221:8081/docker-release/vpro'
 def version   = 'v2'
 pipeline{
     agent any
@@ -94,15 +95,6 @@ pipeline{
         }
 	    stage(" Docker Build ") {
       steps {
-	      nexusArtifactUploader(
-                nexusVersion: 'nexus3',
-                protocol: 'http',
-                nexusUrl: "${NEXUSIP}:${NEXUSPORT}",
-                groupId: 'vpro',
-                version: "${env.BUILD_ID}-${env.BUILD_TIMESTAMP}",
-                repository1: "${ NEXUS_DOCKER_REPO}",
-                credentialsId: "${NEXUS_LOGIN}",
-		)
         script {
            echo '<--------------- Docker Build Started --------------->'
            app = docker.build(imageName+":"+version)
