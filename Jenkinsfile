@@ -2,8 +2,8 @@ def COLOR_MAP = [
 	'SUCCESS' : 'good',
 	'FAILURE' : 'danger',
 	]
-def registry = "http://54.156.110.248:8081/:nexuslogin"
-def imageName = '54.156.110.248:8081/docker-release/vpro'
+def registry = "http://54.205.250.111:8081/:nexuslogin"
+def imageName = '54.205.250.111:8081/docker-release/vpro'
 def version   = 'v2'
 pipeline{
     agent any
