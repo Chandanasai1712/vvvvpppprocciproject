@@ -4,7 +4,7 @@ def COLOR_MAP = [
 	]
 def registry = "http://54.146.140.136:8081/"
 def imageName = '54.146.140.136:8081/docker-release/vpro'
-def version   = 'v2'
+def version   = 'v1'
 pipeline{
     agent any
     tools {
