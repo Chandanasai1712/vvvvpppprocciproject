@@ -5,7 +5,7 @@ FROM tomcat:latest
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy the WAR file from your local machine into the container
-COPY vprofile.war /var/lib/jenkins/workspace/vprofile-cipipeline/target/vprofile-v2.war
+COPY vprofile.war ./target/vprofile-v2.war
 
 # Set the entry point to start Tomcat and deploy the WAR file
 CMD ["catalina.sh", "run"]
