@@ -2,8 +2,8 @@ def COLOR_MAP = [
 	'SUCCESS' : 'good',
 	'FAILURE' : 'danger',
 	]
-def registry = "http://54.205.250.111:8081/"
-def imageName = '54.205.250.111:8081/docker-release/vpro'
+def registry = "http://54.146.140.136:8081/"
+def imageName = '54.146.140.136:8081/docker-release/vpro'
 def version   = 'v2'
 pipeline{
     agent any
@@ -18,7 +18,7 @@ pipeline{
          NEXUS_PASS = 'admin'
          RELEASE_REPO = 'vprofile-release'
          CENTRAL_REPO = 'vpro-maven-central'
-         NEXUSIP = '172.31.94.128'
+         NEXUSIP = 'docker-release'
          NEXUSPORT = '8081'
          NEXUS_GRP_REPO = 'vpro-maven-group'
          NEXUS_LOGIN = 'nexuslogin' 
